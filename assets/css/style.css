@@ -29,15 +29,14 @@ img { max-width: 100%; height: auto; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 0;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap;
   position: relative;
 }
 .brand {
   display:flex; align-items:center; gap: 12px;
 }
-.brand img { width: 64px; height: 64px; }
+.brand img { width: 84px; height: 84px; }
 .brand .name {
   display:flex; flex-direction:column; line-height:1.1;
 }
@@ -50,7 +49,7 @@ img { max-width: 100%; height: auto; }
   gap: 12px;
   font-weight: 600;
   color: rgba(30,42,30,0.9);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 .nav-links a {
   padding: 8px 10px;
@@ -67,7 +66,7 @@ img { max-width: 100%; height: auto; }
 .btn {
   display:inline-flex; align-items:center; justify-content:center;
   border-radius: 12px;
-  padding: 10px 14px;
+  padding: 8px 12px;
   font-weight: 700;
   border: 1px solid transparent;
   cursor:pointer;
@@ -92,8 +91,7 @@ img { max-width: 100%; height: auto; }
 .lang {
   background: rgba(136,152,119,0.15);
   border: 1px solid rgba(63,101,62,0.18);
-  color: var(--deep-green);
-  padding: 8px 10px;
+  padding: 6px 8px;
   border-radius: 12px;
   font-weight: 800;
 }
@@ -400,7 +398,7 @@ textarea.input { min-height: 120px; resize: vertical; }
 }
 /* mobile logo sizing */
 @media (max-width: 520px) {
-  .brand img { width: 54px; height: 54px; }
+  .brand img { width: 72px; height: 72px; }
   .brand .name strong { font-size: 14px; }
   .actions .btn { padding: 9px 10px; }
 }
