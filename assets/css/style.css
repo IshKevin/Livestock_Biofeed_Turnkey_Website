@@ -37,7 +37,7 @@ img { max-width: 100%; height: auto; }
 .brand {
   display:flex; align-items:center; gap: 12px;
 }
-.brand img { width: 44px; height: 44px; }
+.brand img { width: 64px; height: 64px; }
 .brand .name {
   display:flex; flex-direction:column; line-height:1.1;
 }
@@ -400,7 +400,7 @@ textarea.input { min-height: 120px; resize: vertical; }
 }
 /* mobile logo sizing */
 @media (max-width: 520px) {
-  .brand img { width: 36px; height: 36px; }
+  .brand img { width: 54px; height: 54px; }
   .brand .name strong { font-size: 14px; }
   .actions .btn { padding: 9px 10px; }
 }
