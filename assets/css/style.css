@@ -299,3 +299,16 @@ textarea.input { min-height: 120px; resize: vertical; }
 }
 .mobile-menu a:hover { background: rgba(136,152,119,0.18); }
 .mobile-menu.open { display:block; }
+
+/* disabled links (no external content yet) */
+.disabled-link {
+  pointer-events: none;
+  opacity: 0.65;
+  text-decoration: none !important;
+}
+/* mobile logo sizing */
+@media (max-width: 520px) {
+  .brand img { width: 36px; height: 36px; }
+  .brand .name strong { font-size: 14px; }
+  .actions .btn { padding: 9px 10px; }
+}

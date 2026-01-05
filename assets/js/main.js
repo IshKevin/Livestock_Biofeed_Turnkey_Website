@@ -5,22 +5,32 @@ function waLink() {
   return `https://wa.me/${num}`;
 }
 
+function setLinkOrDisable(el, url) {
+  if (!el) return;
+  if (!url || url.trim() === "") {
+    el.classList.add("disabled-link");
+    el.removeAttribute("href");
+    el.setAttribute("title", "Coming soon");
+  } else {
+    el.href = url;
+    el.classList.remove("disabled-link");
+    el.removeAttribute("title");
+  }
+}
+
 window.addEventListener("DOMContentLoaded", () => {
-  // set social links
+  // socials
   const s = (window.LB_CONFIG && window.LB_CONFIG.socials) ? window.LB_CONFIG.socials : {};
-  const map = {
-    ig: s.instagram, fb: s.facebook, ln: s.linkedin, yt: s.youtube
-  };
-  Object.entries(map).forEach(([id, url]) => {
-    const el = document.getElementById(id);
-    if (el && url) el.href = url;
-  });
+  setLinkOrDisable(document.getElementById("ig"), s.instagram);
+  setLinkOrDisable(document.getElementById("fb"), s.facebook);
+  setLinkOrDisable(document.getElementById("ln"), s.linkedin);
+  setLinkOrDisable(document.getElementById("yt"), s.youtube);
 
   // whatsapp floating
   const wa = document.getElementById("waBtn");
   if (wa) wa.href = waLink();
 
-  // catalog link
+  // catalog
   const cat = document.getElementById("catalogBtn");
   if (cat && window.LB_CONFIG && window.LB_CONFIG.catalog_pdf_url) {
     cat.href = window.LB_CONFIG.catalog_pdf_url;
