@@ -46,7 +46,7 @@ img { max-width: 100%; height: auto; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   font-weight: 600;
   color: rgba(30,42,30,0.9);
   flex-wrap: nowrap;
