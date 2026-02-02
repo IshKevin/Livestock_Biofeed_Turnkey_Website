@@ -266,7 +266,7 @@ function applyTranslations() {
   }
 
   // product points
-  const ids = ["p1","p2","p3","p4"];
+  const ids = ["p1", "p2", "p3", "p4"];
   ids.forEach((id) => {
     const ul = document.getElementById(id + "_points");
     const points = i18n[currentLang][`${id}_points`];
@@ -285,9 +285,9 @@ function applyTranslations() {
   if (compList) {
     compList.innerHTML = "";
     i18n[currentLang].comp_card_points.forEach(p => {
-        const li = document.createElement("li");
-        li.textContent = p;
-        compList.appendChild(li);
+      const li = document.createElement("li");
+      li.textContent = p;
+      compList.appendChild(li);
     });
   }
 
@@ -324,7 +324,7 @@ function applyTranslations() {
   const faq = document.getElementById("faq");
   if (faq) {
     faq.innerHTML = "";
-    i18n[currentLang].faq.forEach(([q,a]) => {
+    i18n[currentLang].faq.forEach(([q, a]) => {
       const div = document.createElement("div");
       div.className = "card";
       div.innerHTML = `<h3 style="margin:0 0 6px;">${q}</h3><p style="margin:0;color:rgba(30,42,30,0.72);line-height:1.55;">${a}</p>`;
@@ -332,7 +332,11 @@ function applyTranslations() {
     });
   }
 
-  document.getElementById("langBtn").textContent = currentLang.toUpperCase();
+  const lb = document.getElementById("langBtn");
+  if (lb) lb.textContent = currentLang.toUpperCase();
+  const mlb = document.getElementById("mobileLangBtn");
+  if (mlb) mlb.textContent = currentLang.toUpperCase();
+  document.documentElement.lang = currentLang;
 }
 
 function setLang(lang) {
@@ -346,18 +350,11 @@ function toggleLang() {
   setLang(currentLang === "en" ? "fr" : "en");
 }
 
-function setupMobileMenu() {
-  const btn = document.getElementById("menuBtn");
-  const menu = document.getElementById("mobileMenu");
-  btn.addEventListener("click", () => {
-    menu.classList.toggle("open");
-  });
-  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => menu.classList.remove("open")));
-}
+// Expose to window for main.js access
+window.toggleLang = toggleLang;
 
 window.addEventListener("DOMContentLoaded", () => {
   setLang(detectLang());
-  document.getElementById("langBtn").addEventListener("click", toggleLang);
-  setupMobileMenu();
 });
+
 
